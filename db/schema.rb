@@ -18,8 +18,12 @@ ActiveRecord::Schema.define(version: 20170420115523) do
     t.string   "cpf"
     t.string   "registry"
     t.string   "password"
+    t.string   "auth_token"
+    t.string   "type"
+    t.integer  "parent_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["parent_id"], name: "index_users_on_parent_id"
   end
 
 end

@@ -6,6 +6,9 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :cpf
       t.string :registry
       t.string :password
+      t.string :auth_token
+      t.string :type
+      t.references :parent, index:true
 
       t.timestamps
     end
