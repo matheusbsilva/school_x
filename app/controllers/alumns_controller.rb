@@ -5,16 +5,15 @@ class AlumnsController < ApplicationController
 
   def new
     @alumn = Alumn.new
+    @@parent = Parent.find(params[:parent_id])
   end
-
   def show
     @alumn = Alumn.find(params[:id])
   end
 
   def create
-    @parent = Parent.find(params[:parent_id])
     @alumn = Alumn.new(alumn_params)
-    @alumn.parent_id = @parent.id
+    @alumn.parent_id = @@parent.id
     if (@alumn.save)
       redirect_to @alumn
     else
@@ -25,6 +24,6 @@ class AlumnsController < ApplicationController
 
   private
   def alumn_params
-    params.require(:alumn).permit(:name,:address,:registry,:password)
+    params.require(:alumn).permit(:name,:address,:registry,:password,:parent_id)
   end
 end
