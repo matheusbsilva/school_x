@@ -1,0 +1,22 @@
+<div class="">
+  <table>
+    <tr>
+      <td><%=link_to "Criar Aluno", new_parent_path%></td>
+    </tr>
+  </table>
+</div>
+<table>
+  <%@users.each do |user| %>
+    <tr>
+      <td><%=user.name%></td>
+      <td><%=user.address%></td>
+      <td><%=user.cpf%></td>
+      <td><%=user.type%></td>
+      <%if user.type == "Alumn" %>
+        <td><%=link_to "Mostrar",alumn_path(user)%></td>
+      <%elsif user.type == "Parent" %>
+        <td><%=link_to "Mostrar",parent_path(user)%></td>
+      <%end%>
+    </tr>
+  <%end%>
+</table>

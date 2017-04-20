@@ -12,15 +12,19 @@ class AlumnsController < ApplicationController
   end
 
   def create
+    @parent = Parent.find(params[:parent_id])
     @alumn = Alumn.new(alumn_params)
+    @alumn.parent_id = @parent.id
     if (@alumn.save)
       redirect_to @alumn
     else
+      debugger
       render 'new'
+    end
   end
 
   private
   def alumn_params
-    params.requite(:alumn).permit(:name,:address,:registry,:password,:parent_id)
+    params.require(:alumn).permit(:name,:address,:registry,:password)
   end
 end
