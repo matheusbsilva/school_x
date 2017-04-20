@@ -7,7 +7,12 @@ class AlumnsController < ApplicationController
     @alumn = Alumn.new
     @@parent = Parent.find(params[:parent_id])
   end
+
   def show
+    @alumn = Alumn.find(params[:id])
+  end
+
+  def edit
     @alumn = Alumn.find(params[:id])
   end
 
@@ -19,6 +24,15 @@ class AlumnsController < ApplicationController
     else
       debugger
       render 'new'
+    end
+  end
+
+  def update
+    @alumn = Alumn.find(params[:id])
+    if(@alumn.update(alumn_params))
+      redirect_to @alumn
+    else
+      render 'edit'
     end
   end
 

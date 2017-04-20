@@ -1,0 +1,18 @@
+<div class="">
+  <table>
+    <tr>
+      <td><%=link_to "Criar Aluno", new_parent_path%></td>
+    </tr>
+  </table>
+</div>
+<table>
+  <%@parents.each do |parent| %>
+    <tr>
+      <td><%=parent.name%></td>
+      <td><%=parent.address%></td>
+      <td><%=parent.cpf%></td>
+      <td><%=parent.type%></td>
+      <td><%=link_to "Mostrar",parent_path(parent)%></td>
+    </tr>
+  <%end%>
+</table>

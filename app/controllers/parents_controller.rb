@@ -10,6 +10,11 @@ class ParentsController < ApplicationController
 
   def show
     @parent = Parent.find(params[:id])
+    @alumn = Alumn.find_by_parent_id(@parent.id)
+  end
+
+  def edit
+    @parent = Parent.find(params[:id])
   end
 
   def create
@@ -18,6 +23,15 @@ class ParentsController < ApplicationController
       redirect_to new_parent_alumn_path(@parent)
     else
       render 'new'
+    end
+  end
+
+  def update
+    @parent = Parent.find(params[:id])
+    if(@parent.update(parent_params))
+      redirect_to @parent
+    else
+      render 'edit'
     end
   end
 

@@ -1,0 +1,21 @@
+<div class="">
+<h2><%=@parent.name%></h2>
+  <table>
+    <tr>
+      <td><%=@parent.cpf%></td>
+    </tr>
+    <tr>
+      <td><%=@parent.address%></td>
+    </tr>
+    <tr>
+      <td><%=@parent.type%></td>
+    </tr>
+    <tr>
+      <td><%=link_to "Editar", edit_parent_path(@parent)%></td>
+    </tr>
+    <tr>
+      <td><%=link_to @alumn.name, alumn_path(@alumn)%></td>
+      <td><%=@alumn.registry%></td>
+    </tr>
+  </table>
+</div>

@@ -1,3 +1,3 @@
 class Parent < User
-  has_many :alumns, autosave: true
+  has_many :alumns
 end

@@ -1,2 +1,18 @@
-<h1>Alumns#index</h1>
-<p>Find me in app/views/alumns/index.html.erb</p>
+<div class="">
+  <table>
+    <tr>
+      <td><%=link_to "Criar Aluno", new_parent_path%></td>
+    </tr>
+  </table>
+</div>
+<table>
+  <%@alumns.each do |alumn| %>
+    <tr>
+      <td><%=alumn.name%></td>
+      <td><%=alumn.address%></td>
+      <td><%=alumn.cpf%></td>
+      <td><%=alumn.type%></td>
+      <td><%=link_to "Mostrar",alumn_path(alumn)%></td>
+    </tr>
+  <%end%>
+</table>

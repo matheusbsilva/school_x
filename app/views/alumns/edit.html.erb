@@ -1,0 +1,23 @@
+<%=form_for @alumn do |a| %>
+  <div class="">
+    <p>
+      <%=a.label :name%>
+      <%=a.text_field :name %>
+    </p>
+    <p>
+      <%=a.label :registry%>
+      <%=a.text_field :registry%>
+    </p>
+    <p>
+      <%=a.label :address%>
+      <%=a.text_field :address%>
+    </p>
+    <p>
+      <%=a.label :password%>
+      <%=a.password_field :password%>
+    </p>
+    <p>
+      <%=a.submit%>
+    </p>
+  </div>
+<%end%>
