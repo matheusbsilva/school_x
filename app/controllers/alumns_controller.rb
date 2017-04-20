@@ -1,4 +1,6 @@
 class AlumnsController < ApplicationController
+  include SessionsHelper
+  before_action :logged_in?
   def index
     @alumns = Alumn.all
   end
