@@ -9,7 +9,8 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :auth_token
       t.string :type
       t.references :parent, index:true
-
+      t.belongs_to :classroom, index: true
+      
       t.timestamps
     end
   end
