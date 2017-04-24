@@ -3,7 +3,7 @@
     <%= label_tag 'login', 'Login', class: 'sr-only' %>
     <div class="input-group">
       <span class="input-group-addon fa fa-user"></span>
-      <%= text_field_tag('login', nil, placeholder: "Login", class: "form-control") %>
+      <%= text_field_tag('login', nil, placeholder: "Login", class: "form-control", :autofocus => true) %>
     </div>
     <p>
       <small class="text-muted text-lowercase">(somente numeros)</small>
