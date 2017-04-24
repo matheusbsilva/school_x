@@ -17,5 +17,19 @@
       <td><%=link_to @alumn.parent.name, parent_path(@alumn.parent)%></td>
       <td><%=@alumn.parent.cpf%></td>
     </tr>
+    <tr>
+      <td><%=link_to 'Nova matéria', new_alumn_subject_path(@alumn)%></td>
+    </tr>
+    <tr>
+      <%@alumn.subjects.each do |sub|%>
+        <td><%= sub.name%></td>
+      <% end %>
+    </tr>
+      <%@alumn.grades.each do |grade|%>
+      <tr>
+        <td><%= grade.grade_final%></td>
+        <td><%= grade.subject.name %></td>
+      </tr>
+      <% end %>
   </table>
 </div>

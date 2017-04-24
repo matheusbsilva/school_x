@@ -3,6 +3,19 @@ Rails.application.routes.draw do
     resources :alumns
   end
   resources :alumns
+  resources :subjects
+  resources :grades
+
+  resources :alumns do
+    resources :subjects do
+      resources :grades
+    end
+  end
+
+  # resources :subjects do
+  #   resources :alumns
+  #   resources :grades
+  # end
 
   get 'login', to:'sessions#new', as:'login'
   post 'login', to:'sessions#create'

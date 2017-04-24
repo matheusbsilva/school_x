@@ -1,6 +1,6 @@
 class AlumnsController < ApplicationController
   include SessionsHelper
-  before_action :logged_in?
+  # before_action :logged_in?
   def index
     @alumns = Alumn.all
   end
@@ -40,6 +40,6 @@ class AlumnsController < ApplicationController
 
   private
   def alumn_params
-    params.require(:alumn).permit(:name,:address,:registry,:password,:parent_id)
+    params.require(:alumn).permit(:name,:address,:registry,:password,:parent_id,:classroom_id)
   end
 end

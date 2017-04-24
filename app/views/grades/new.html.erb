@@ -1,0 +1,11 @@
+<%=form_for @grade do |s| %>
+  <div class="">
+    <p>
+      <%=s.label :grade_final%>
+      <%=s.text_field :grade_final %>
+    </p>
+    <p>
+      <%=s.submit%>
+    </p>
+  </div>
+<%end%>

@@ -1,6 +1,6 @@
 class ParentsController < ApplicationController
   include SessionsHelper
-  before_action :logged_in?
+  # before_action :logged_in?
   def index
     @parents = Parent.all
   end

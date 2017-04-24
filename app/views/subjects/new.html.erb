@@ -1,0 +1,11 @@
+<%=form_for @subject do |s| %>
+  <div class="">
+    <p>
+      <%=s.label :name%>
+      <%=s.text_field :name %>
+    </p>
+    <p>
+      <%=s.submit%>
+    </p>
+  </div>
+<%end%>
